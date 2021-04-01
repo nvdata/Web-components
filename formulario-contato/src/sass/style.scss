@@ -1,0 +1,7 @@
+@import "../sass/utilities/reset"; //reset padrao
+@import "../sass/utilities/responsivo"; //gera medias responsivos
+
+
+.formulario {
+    @import "../sass/components/form-contato.scss"; //gera medias responsivos
+}
