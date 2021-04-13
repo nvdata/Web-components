@@ -1,0 +1,116 @@
+:root {
+    --color-titulo: black;
+    --color-pseudo: rgb(150, 255, 194);
+    --color-border: rgb(219, 219, 219);
+}
+
+
+
+/* container ==== */
+[data-accordion] {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* titulo =====*/
+[data-accordion] dt {
+    margin-top: 32px;
+    margin-bottom: 10px;
+
+    padding: 12px 0;
+    padding-left: 30px;
+    border-radius: 5px;
+    border: 1px solid var(--color-border);
+
+    font-size: 28px;
+
+    max-width: 900px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: relative;
+    width: 100%;
+    color: var(--color-titulo);
+    cursor: pointer;
+
+}
+
+/* pseudo */
+[data-accordion] dt::before {
+    content: '';
+    display: inline-flex;
+    align-items: center;
+
+    width: 20px;
+    height: 10px;
+
+    margin: auto 0;
+    margin-right: 10px;
+
+    background: var(--color-pseudo);
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 5px;
+}
+
+
+
+/* conteudo container ===== */
+[data-accordion] dd {
+    margin-bottom: .5rem;
+    margin-left: 30px;
+    font-size: 18px;
+    line-height: 145%;
+
+    max-width: 800px;
+    /*  */
+    max-height: 0;
+
+    overflow: hidden;
+
+    clip-path: inset(0 0 100% 0);
+    -webkit-clip-path: inset(0 0 100% 0);
+
+}
+
+[data-accordion] dd .content {
+    border: 1px solid var(--color-border);
+
+}
+
+
+[data-accordion] dd.ativo {
+    display: block;
+}
+
+[data-accordion] * {
+    transition: all .4s ease;
+}
+
+/* icone */
+[data-accordion] dt ion-icon {
+    margin-left: 10px;
+
+}
+
+/* icone ativo */
+[data-accordion] dt.ativo ion-icon {
+    transform: rotate(-180deg);
+}
+
+/* exemplo borda completa */
+.border-full * {
+    border: none !important;
+
+}
+
+.border-full {
+    width: 900px;
+    border: 1px solid var(--color-border);
+    border-radius: 5px;
+}
